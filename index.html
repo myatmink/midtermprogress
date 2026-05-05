@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SDG 3 - Good Health and Well-being</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    html{
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f7f6;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      position: fixed;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      width: 100%;
+      background: #2E8B57;
+      padding: 10px 80px;
+      z-index: 1000;
+    }
+
+    nav div a{
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      margin-right: 200px;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 0px;
+      margin-top: 50px;
+    }
+
+    /* header h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    } */
+
+    section {
+      padding: 40px 40px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    section{
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2E8B57;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background-color: #e8f5e9;
+      padding: 15px;
+      border-left: 5px solid #4CAF50;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2E8B57;
+      color: white;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #388E3C;
+    }
+
+    .mb-3, .row {
+      padding: 0 30px;
+      margin: 30px 0;
+    }
+
+    .card {
+      border-radius: 15px;
+    }
+
+    h2 {
+      color: #2E8B57;
+    }
+
+    .btn-custom {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-custom:hover {
+      background: #388E3C;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div>
+      <a href="./index.html">Sustainable Development Goal 3</a>
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#problems">Problems</a></li>
+      <li><a href="./exercise.html">Exercise</a></li>
+      <li><a href="./healthcheck.html">Healthcheck</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div style="margin-top:30px; background: rgba(255,255,255,0.1); padding:20px; border-radius:10px; max-width:500px; margin-left:auto; margin-right:auto;">
+  
+  <h4>Daily Health Check</h4>
+
+  <input type="number" id="dailySleep" placeholder="Sleep (hours)" class="form-control mb-2">
+
+  <input type="number" id="dailyWater" placeholder="Water (cups)" class="form-control mb-2">
+
+  <input type="number" id="dailyExercise" placeholder="Exercise (min)" class="form-control mb-2">
+
+  <select id="dailyMood" class="form-control mb-2">
+    <option value="3">😊 Good</option>
+    <option value="2">😐 Okay</option>
+    <option value="1">😞 Bad</option>
+  </select>
+
+  <button class="btn btn-light w-100" onclick="dailyCheck()">Check Today</button>
+
+  <p id="dailyResult" style="margin-top:10px; font-weight:bold;"></p>
+
+</div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>What is SDG 3?</h2>
+    <p>
+      SDG 3 is one of the United Nations Sustainable Development Goals.
+      It focuses on ensuring healthy lives and promoting well-being for all people.
+    </p>
+
+    <p>
+      Good health includes physical fitness, mental health, and access to medical care.
+      A healthy population leads to a stronger and more productive society.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="Healthcare">
+  </section>
+
+  <!-- PROBLEMS -->
+  <section id="problems">
+    <h2>Common Health Problems Today</h2>
+    <ul>
+      <li>Lack of physical activity</li>
+      <li>Unhealthy diet</li>
+      <li>Insufficient sleep</li>
+      <li>High stress levels</li>
+    </ul>
+
+    <div class="highlight">
+      These habits increase the risk of diseases such as obesity, diabetes, and heart problems.
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Unhealthy lifestyle">
+  </section>
+
+  <!-- EXERCISE -->
+  <section id="exercise">
+    <h2>The Importance of Exercise</h2>
+    <p>
+      Exercise helps maintain a strong body and improves mental health.
+      It can reduce stress, improve sleep, and increase overall happiness.
+    </p>
+
+    <ul>
+      <li>Builds muscle and strength</li>
+      <li>Improves cardiovascular health</li>
+      <li>Boosts confidence</li>
+    </ul>
+
+    <!-- <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" alt="Workout"> -->
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="Running">
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle">
+    <h2>How to Maintain a Healthy Lifestyle</h2>
+    <ul>
+      <li>Exercise regularly (3–4 times a week)</li>
+      <li>Eat a balanced diet</li>
+      <li>Sleep at least 7–8 hours</li>
+      <li>Stay hydrated</li>
+    </ul>
+
+    <div class="highlight">
+      Health isn’t something you achieve once — it’s something you build every day.
+    </div>
+
+    <button onclick="showMotivation()">
+      Motivation
+    </button>
+    <p id="motivationText"></p>
+
+    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352" alt="Healthy food">
+  </section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Information Management 113403033</p>
+  </footer>
+
+</body>
+</html>
+
+<script>
+
+  //header dailycheck
+  function dailyCheck() {
+  let sleep = parseInt(document.getElementById("dailySleep").value) || 0;
+  let water = parseInt(document.getElementById("dailyWater").value) || 0;
+  let exercise = parseInt(document.getElementById("dailyExercise").value) || 0;
+  let mood = parseInt(document.getElementById("dailyMood").value);
+
+  let score = 0;
+
+  // Sleep (30)
+  if (sleep >= 7) score += 30;
+  else if (sleep >= 5) score += 15;
+
+  // Water (20)
+  if (water >= 8) score += 20;
+  else if (water >= 5) score += 10;
+
+  // Exercise (30)
+  if (exercise >= 30) score += 30;
+  else if (exercise >= 15) score += 15;
+
+  // Mood (20)
+  score += mood * 5;
+
+  let result = "Today's Score: " + score + "/100 ";
+
+  if (score >= 80) result += "🌟 Great job!";
+  else if (score >= 50) result += "👍 Keep improving!";
+  else result += "⚠️ Try to take better care today";
+
+  // save to localStorage
+  localStorage.setItem("todayScore", score);
+
+  document.getElementById("dailyResult").innerText = result;
+
+  
+}
+  
+  // motivation
+  function showMotivation() {
+  const quotes = [
+    "Small steps every day lead to big results 💪",
+    "Your health is your greatest wealth 🧠",
+    "Consistency beats motivation 🔥",
+    "Take care of your body, it’s the only place you live 🏡",
+    "Progress, not perfection 🌱",
+    "A healthy mind starts with a healthy body ⚖️",
+    "You don’t have to be extreme, just consistent 🚀",
+    "Every workout is a step forward 🏃",
+    "Rest is also part of progress 😌",
+    "You are stronger than you think 💥"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById("motivationText").innerText = quotes[randomIndex];
+}
+
+
+</script>
