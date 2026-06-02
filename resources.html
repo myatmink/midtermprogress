@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG 3 Resources</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="brand"><a href="./index.html">SDG 3 Wellness Hub</a></div>
+    <ul>
+      <li><a href="./index.html">🏠 Home</a></li>
+      <li><a href="./resources.html">📚 Resources</a></li>
+      <li><a href="./exercise.html">🏋️ Exercise Planner</a></li>
+      <li><a href="./healthcheck.html">💓 Health Check</a></li>
+      <li><a href="./local-resources.html">🗺️ Local Resources</a></li>
+      <li><a href="./first-aid.html">🚑 First Aid</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="header-hero">
+      <div class="container mx-auto max-w-5xl">
+        <div class="hero-panel text-white text-center">
+          <h1 class="display-5 fw-bold mb-3">📚 SDG 3 Resources</h1>
+          <p class="lead mb-4">Explore health literacy, community actions, and practical tips to promote well-being.</p>
+          <div class="summary-card mx-auto max-w-2xl">
+            <p>Use these resources to learn more about health equity, prevention, and community support aligned with SDG 3.</p>
+            <button class="btn btn-primary mt-3" onclick="showMotivation()">Get a wellness tip</button>
+            <p id="motivationText" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card container mx-auto max-w-5xl">
+      <h2>About SDG 3</h2>
+      <p>Goal 3 of the United Nations Sustainable Development Goals is focused on ensuring healthy lives and promoting well-being for all at every age.</p>
+      <p>It includes reducing maternal and child mortality, ending epidemics, and improving access to quality healthcare.</p>
+    </section>
+
+    <section class="section-card container mx-auto max-w-5xl">
+      <h2>Key Focus Areas</h2>
+      <ul>
+        <li>Universal access to primary health care and vaccines.</li>
+        <li>Improved nutrition and maternal health services.</li>
+        <li>Mental health support and substance abuse prevention.</li>
+        <li>Reduced risk of infectious diseases through prevention and education.</li>
+      </ul>
+    </section>
+
+    <section class="section-card container mx-auto max-w-5xl">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <h2 class="mb-0">Resource Highlights</h2>
+        <span class="badge-pill bg-primary">Featured</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h5>📘 Health Literacy</h5>
+              <span class="badge-pill bg-success">Guide</span>
+            </div>
+            <p>Learn how to read health information, compare safe sources, and make informed choices.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h5>🤝 Community Support</h5>
+              <span class="badge-pill bg-warning text-dark">Local</span>
+            </div>
+            <p>Find local initiatives, support groups, and community programs that promote wellness.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h5>🌿 Everyday Well-being</h5>
+              <span class="badge-pill bg-info text-dark">Habits</span>
+            </div>
+            <p>Use small habits like sleep, movement, and hydration to support long-term health.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card container mx-auto max-w-5xl">
+      <h2>Take Action</h2>
+      <div class="highlight-box">
+        <strong>Local steps:</strong> join a community health program, practice healthy habits, and share reliable health information with friends and family.
+      </div>
+      <p class="mt-3">Every positive choice helps the whole community move closer to SDG 3.</p>
+    </section>
+
+    <section class="section-card useful-links container mx-auto max-w-5xl mb-8">
+      <h2>Useful Links</h2>
+      <ul>
+        <li><a href="https://www.un.org/sustainabledevelopment/health/" target="_blank">UN SDG 3 official page</a></li>
+        <li><a href="https://www.who.int/health-topics/sustainable-development-goals" target="_blank">WHO resources for health goals</a></li>
+        <li><a href="https://www.cdc.gov/" target="_blank">CDC health guidance and prevention</a></li>
+      </ul>
+    </section>
+
+    <section class="section-card container mx-auto max-w-5xl mb-8">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-7">
+          <h2>Ready to take the next step?</h2>
+          <p class="mb-3">Use our planner and health check tools to turn knowledge into action. Track your habits, build better routines, and see progress over time.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="./exercise.html" class="btn btn-primary btn-lg cta-button">Open Exercise Planner</a>
+            <a href="./healthcheck.html" class="btn btn-outline-primary btn-lg cta-button cta-outline">Open Health Check</a>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="feature-card p-4 h-100 bg-primary bg-opacity-15">
+            <h5>Why use the tools?</h5>
+            <p class="mb-2">The planner helps you structure weekly movement while the health check gives you a snapshot of your overall wellness.</p>
+            <p class="mb-0">These practical actions support SDG 3 by making healthy habits easier and more visible every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container max-w-6xl mx-auto d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-4">
+      <p class="mb-0">© 2026 Information Management 113403033</p>
+      <div class="footer-links">
+        <a href="./index.html">Home</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./exercise.html">Exercise</a>
+        <a href="./healthcheck.html">Health Check</a>
+        <a href="./local-resources.html">Local Resources</a>
+        <a href="./first-aid.html">First Aid</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./scripts.js"></script>
+</body>
+</html>

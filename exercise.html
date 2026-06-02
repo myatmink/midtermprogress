@@ -1,189 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Exercise Planner</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-body {
-  background: #f4f7f6;
-  font-family: Arial;
-}
-
-/* NAVBAR */
-    nav {
-      display: flex;
-      position: fixed;
-      justify-content: space-between;
-      align-items: center;
-      top: 0;
-      width: 100%;
-      background: #2E8B57;
-      padding: 10px 80px;
-      z-index: 1000;
-    }
-
-    nav div a{
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: bold;
-      
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      margin-right: 200px;
-    }
-
-    nav ul li {
-      margin: 0 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-.header {
-  background: linear-gradient(135deg, #2E8B57, #4CAF50);
-  color: white;
-  text-align: center;
-  padding: 40px;
-  margin-top: 50px;
-}
-
-.card {
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  border: none;
-
-}
-
-#planResult{
-    margin: 20px 0px;
-}
-
-.day {
-  background: #ffffff;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
   <nav>
-    <div>
-      <a href="./index.html">Sustainable Development Goal 3</a>
-    </div>
+    <div class="brand"><a href="./index.html">SDG 3 Wellness Hub</a></div>
     <ul>
-      <li><a href="./index.html">About</a></li>
-      <li><a href="#problems">Problems</a></li>
-      <li><a href="./exercise.html">Exercise</a></li>
-      <li><a href="./healthcheck.html">Healthcheck</a></li>
+      <li><a href="./index.html">🏠 Home</a></li>
+      <li><a href="./resources.html">📚 Resources</a></li>
+      <li><a href="./exercise.html">🏋️ Exercise Planner</a></li>
+      <li><a href="./healthcheck.html">💓 Health Check</a></li>
+      <li><a href="./local-resources.html">🗺️ Local Resources</a></li>
+      <li><a href="./first-aid.html">🚑 First Aid</a></li>
     </ul>
   </nav>
 
-<div class="header">
-  <h1>🏋️ Weekly Exercise Planner</h1>
-  <p>Select your goal and get your routine</p>
-</div>
+<main>
+  <section class="header-hero">
+    <div class="container mx-auto max-w-5xl">
+      <div class="hero-panel text-white text-center">
+        <h1 class="display-5 fw-bold mb-3">🏋️ Weekly Exercise Planner</h1>
+        <p class="lead mb-4">Choose a goal, generate a smart routine, and stay consistent with healthy movement.</p>
+        <div class="summary-card mx-auto max-w-2xl">
+          <p>Use this planner to support your SDG 3 journey through balanced workouts, recovery days, and wellness tips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="container mt-4">
+  <div class="container mx-auto max-w-5xl py-6">
+    <section id="planner" class="section-card">
+      <h2>Exercise Planner</h2>
+      <p>Create a weekly plan that matches your wellness goal and builds healthier habits.</p>
+      <div class="card p-4 mb-4">
+        <h5>Choose Your Goal</h5>
+        <select id="goal" class="form-control mb-3">
+          <option value="">Select Goal</option>
+          <option value="lose">🔥 Lose Weight</option>
+          <option value="maintain">⚖️ Maintain</option>
+          <option value="gain">💪 Gain Muscle</option>
+        </select>
+        <button class="btn btn-primary" onclick="generatePlan()">Generate Plan</button>
+      </div>
+      <div id="planResult"></div>
+    </section>
 
-  <div class="card p-4 mb-4">
-    <h5>Choose Your Goal</h5>
-
-    <select id="goal" class="form-control mb-3">
-      <option value="">Select Goal</option>
-      <option value="lose">🔥 Lose Weight</option>
-      <option value="maintain">⚖️ Maintain</option>
-      <option value="gain">💪 Gain Muscle</option>
-    </select>
-
-    <button class="btn btn-success" onclick="generatePlan()">Generate Plan</button>
+    <section id="tips" class="section-card">
+      <h2>Wellness Tips</h2>
+      <ul>
+        <li>Build consistency with 30–45 minutes of movement most days.</li>
+        <li>Balance cardio, strength, and recovery for long-term progress.</li>
+        <li>Hydrate well and refuel with whole foods after workouts.</li>
+        <li>Listen to your body and make rest part of the plan.</li>
+      </ul>
+      <div class="feature-card">
+        <h5>Planner feature</h5>
+        <p>Use this routine generator to focus on what matters: sustainable exercise, recovery, and energy.</p>
+      </div>
+    </section>
   </div>
+  </main>
 
-  <div id="planResult"></div>
-
-</div>
-
-<script>
-function generatePlan() {
-  let goal = document.getElementById("goal").value;
-  let result = "";
-
-  if (!goal) {
-    result = "<p>Please select a goal</p>";
-  }
-
-  // LOSE WEIGHT
-  else if (goal === "lose") {
-    result = `
-      <div class="card p-4">
-        <h5>🔥 Lose Weight Plan</h5>
-
-        <div class="day">Mon: 30 min cardio + abs</div>
-        <div class="day">Tue: HIIT workout</div>
-        <div class="day">Wed: Rest / light walk</div>
-        <div class="day">Thu: Cardio + legs</div>
-        <div class="day">Fri: Full body workout</div>
-        <div class="day">Sat: Jogging / cycling</div>
-        <div class="day">Sun: Rest</div>
+  <footer>
+    <div class="container max-w-6xl mx-auto d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-4">
+      <p class="mb-0">© 2026 Information Management 113403033</p>
+      <div class="footer-links">
+        <a href="./index.html">Home</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./exercise.html">Exercise</a>
+        <a href="./healthcheck.html">Health Check</a>
+        <a href="./local-resources.html">Local Resources</a>
+        <a href="./first-aid.html">First Aid</a>
       </div>
-    `;
-  }
-
-  // MAINTAIN
-  else if (goal === "maintain") {
-    result = `
-      <div class="card p-4">
-        <h5>⚖️ Maintain Plan</h5>
-
-        <div class="day">Mon: Full body workout</div>
-        <div class="day">Tue: Light cardio</div>
-        <div class="day">Wed: Strength training</div>
-        <div class="day">Thu: Rest</div>
-        <div class="day">Fri: Core workout</div>
-        <div class="day">Sat: Outdoor activity</div>
-        <div class="day">Sun: Rest</div>
-      </div>
-    `;
-  }
-
-  // GAIN MUSCLE
-  else if (goal === "gain") {
-    result = `
-      <div class="card p-4">
-        <h5>💪 Gain Muscle Plan</h5>
-
-        <div class="day">Mon: Chest + triceps</div>
-        <div class="day">Tue: Back + biceps</div>
-        <div class="day">Wed: Rest</div>
-        <div class="day">Thu: Legs</div>
-        <div class="day">Fri: Shoulders</div>
-        <div class="day">Sat: Light cardio</div>
-        <div class="day">Sun: Rest</div>
-      </div>
-    `;
-  }
-
-  document.getElementById("planResult").innerHTML = result;
-}
-</script>
-
+    </div>
+  </footer>
+  <script src="./scripts.js"></script>
 </body>
 </html>
